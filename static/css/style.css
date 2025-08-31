@@ -1,0 +1,190 @@
+/* ===== HEADER (your top bar) ===== */
+.top {
+  background-color: black;
+}
+
+.top .user-nav {
+  background-color: rgb(31, 29, 29);
+  height: 5vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.top a {
+  text-decoration: none;
+  color: white;
+  margin-left: 15px;
+}
+
+/* ===== SECOND HEADER (logo + nav button) ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: #011dee;
+  border-bottom: 1px solid #eee;
+}
+
+.header-nav button {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #030303;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+/* ===== TODO CONTAINER ===== */
+body {
+  background: #f8f9fa;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  min-height: 80vh;
+}
+
+
+
+.title {
+  margin: 0 0 16px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ===== INPUT ===== */
+.todo-input {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 16px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  outline: none;
+}
+
+.todo-input:focus {
+  border-color: #aaa;
+}
+
+/* ===== LIST + ITEMS ===== */
+.todo-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.todo-item {
+  padding: 14px 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.todo-item:hover {
+  background: #f7f7f7;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+/* ===== MARKED AS DONE (we’ll add toggle later) ===== */
+.todo-item.done {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form .form-control {
+  border-radius: 8px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  color: white;
+}
+
+.todo-item:hover{
+  background-color: #222;
+  color: white;
+}
+
+.todo-item span {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* Common Button Styles */
+.todo-item button {
+  border: none;
+  padding: 6px 10px;
+  margin-left: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: white;
+  vertical-align: middle;
+}
+
+/* Complete Button (Green) */
+.btn-complete {
+  background: #28a745; /* Solid Green */
+}
+.btn-complete:hover {
+  background: #218838; /* Darker Green */
+}
+
+/* Edit Button (Yellow) */
+.btn-edit {
+  background: #ffc107; /* Solid Yellow */
+  color: black; /* better contrast */
+}
+.btn-edit:hover {
+  background: #e0a800; /* Darker Yellow */
+}
+
+/* Delete Button (Red) */
+.btn-delete {
+  background: #dc3545; /* Solid Red */
+}
+.btn-delete:hover {
+  background: #c82333; /* Darker Red */
+}

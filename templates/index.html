@@ -1,0 +1,77 @@
+{% include "header.html" %}
+
+<header>
+  <nav class="header-nav left" id="mobile-nav-toggle">
+    <button class="btn-header">
+      <i class="icon-reorder"></i>
+    </button>
+  </nav>
+  <div class="logo">Flask</div>
+</header>
+
+<div class="todo-container">
+  <h1 class="title">Todo</h1>
+
+  <input id="todo-input" class="todo-input" type="text" placeholder="What needs to be done?" />
+  <ul id="todo-list" class="todo-list"></ul>
+</div>
+
+<script>
+  const input = document.getElementById("todo-input");
+  const list  = document.getElementById("todo-list");
+
+  // Function to create a todo item
+  function createTodo(text) {
+    const li = document.createElement("li");
+    li.className = "todo-item";
+
+    // Task text span
+    const span = document.createElement("span");
+    span.textContent = text;
+
+    // Complete button
+    const completeBtn = document.createElement("button");
+    completeBtn.textContent = "✔";
+    completeBtn.className = "btn-complete";
+    completeBtn.onclick = () => {
+      span.classList.toggle("completed");
+    };
+
+    // Edit button
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "✏";
+    editBtn.className = "btn-edit";
+    editBtn.onclick = () => {
+      const newText = prompt("Edit your task:", span.textContent);
+      if (newText !== null && newText.trim() !== "") {
+        span.textContent = newText.trim();
+      }
+    };
+
+    // Delete button
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "🗑";
+    deleteBtn.className = "btn-delete";
+    deleteBtn.onclick = () => {
+      li.remove();
+    };
+
+    li.appendChild(span);
+    li.appendChild(completeBtn);
+    li.appendChild(editBtn);
+    li.appendChild(deleteBtn);
+    return li;
+  }
+
+  // Add on Enter
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const text = input.value.trim();
+      if (!text) return;
+      const li = createTodo(text);
+      list.appendChild(li);
+      input.value = "";
+    }
+  });
+</script>
+
